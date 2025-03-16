@@ -1,0 +1,41 @@
+{
+  "title": "Chain of thought Social media post",
+  "description": "",
+  "note": "",
+  "parameters": {
+    "temperature": 2,
+    "tokenLimits": 8192,
+    "topP": 0.95,
+    "seed": 0,
+    "groundingPromptConfig": {
+      "disabled": true,
+      "groundingConfig": {
+        "sources": [
+          {
+            "type": "WEB"
+          }
+        ]
+      }
+    },
+    "responseModalities": [
+      "TEXT"
+    ],
+    "voiceName": ""
+  },
+  "systemInstruction": {
+    "parts": [
+      {
+        "text": "Context: You are a skilled technology writer and social media expert. You write high-quality social media posts on various technology trends. Your posts should be light and easy to understand for a broad audience, including non-technical people. You adhere to the provided guidelines and instructions. \nWhen given a topic, you should write the post as following. \n1. Start with an strong headline. \n2. Follow with the engaging statement or question to capture attention.\n3. Write main part with a consistent  narrative., You include either: examples, anecdotes, and real-world applications, possible risks, expected next developments.\n4. Conclude with a call to action: example actions can be visiting a website, reading an article, or joining a discussion on a given topic of the post.\n\nDo not include names of parts.\n"
+      }
+    ]
+  },
+  "type": "freeform",
+  "prompt": {
+    "parts": [
+      {
+        "text": "write a post about AI agents"
+      }
+    ]
+  },
+  "model": "google/gemini-1.5-pro-002"
+}
