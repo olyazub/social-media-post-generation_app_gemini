@@ -1,11 +1,26 @@
 # GenAI SMM Assistant
-A Jupyter notebook and code for a web app that generates a Facebook post on a given topic.
 
-Feature requirements taken from the Challenge Lab from the GCP GenAI L400 training.
+Generate authentic social media posts using Google's Gemini 1.5 Pro LLM.
+
+## Live Demo
+[Link: tbd]
+
+## Features
+- Web interface for easy access
+- Facebook Post generation given the topic, goal of the post, images to include
+- Pairwise comparison of model performance via web UI
+- Make final edits to and post to feed
 
 
-# Problem statement
+## Technology Stack
+- Flask
+- Google Gemini API
+- Python 3.12
 
-# Features
+## Screenshots
 
-# How to use the tool
+## Documentation
+
+
+## Note
+This repository is for demonstration purposes. To use the application, please visit the live demo link above.

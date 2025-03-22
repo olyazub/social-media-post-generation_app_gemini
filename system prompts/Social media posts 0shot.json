@@ -30,12 +30,5 @@
     ]
   },
   "type": "freeform",
-  "prompt": {
-    "parts": [
-      {
-        "text": "write a post on AI agents."
-      }
-    ]
-  },
-  "model": "google/gemini-1.5-pro-002"
+  "model": "gemini-1.5-pro-002"
 }

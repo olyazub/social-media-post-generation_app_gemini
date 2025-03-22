@@ -3,7 +3,6 @@
   "description": "",
   "note": "",
   "parameters": {
-    "temperature": 2,
     "tokenLimits": 8192,
     "topP": 0.95,
     "seed": 0,
@@ -30,12 +29,5 @@
     ]
   },
   "type": "freeform",
-  "prompt": {
-    "parts": [
-      {
-        "text": "write a post about AI agents"
-      }
-    ]
-  },
-  "model": "google/gemini-1.5-pro-002"
+  "model": "gemini-1.5-pro-002"
 }

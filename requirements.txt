@@ -1,0 +1,6 @@
+python-dotenv
+google-generativeai
+flask
+bootstrap-flask
+flask-wtf
+

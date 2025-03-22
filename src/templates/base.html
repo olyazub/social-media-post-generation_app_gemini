@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        {% block styles %}
+            <!-- Bootstrap CSS -->
+            {{ bootstrap.load_css() }}
+            <style>
+                .btn {
+                    margin: 6px;
+                }
+                pre {
+                    background: #f4f4f4;
+                    border: 1px solid #ddd;
+                    border-left: 3px solid #0d6efd;
+                    color: #666;
+                    page-break-inside: avoid;
+                    font-family: monospace;
+                    font-size: 15px;
+                    line-height: 1.6;
+                    margin-bottom: 1.6em;
+                    max-width: 100%;
+                    overflow: auto;
+                    padding: 1em 1.5em;
+                    display: block;
+                    word-wrap: break-word;
+                }
+                .form-container {
+                    margin-top: 4rem;
+                    max-width: 600px;
+                }
+                .form-group {
+                    margin-bottom: 1rem;
+                }
+                .input-group {
+                    display: flex;
+                    align-items: center;
+                    gap: 1rem;
+                }
+                .form-control {
+                    width: 400px !important;
+                }
+                .generated-content {
+                    white-space: pre-line;
+                    line-height: 1.6;
+                }
+                
+                .generated-content br {
+                    display: block;
+                    margin: 0.5em 0;
+                }
+                
+                .generated-content strong {
+                    font-weight: bold;
+                }
+                
+                .card {
+                    margin-top: 2rem;
+                    margin-bottom: 2rem;
+                }
+                
+                .card-body {
+                    padding: 2rem;
+                }
+                
+                .generated-content h4 {
+                    margin-bottom: 1.5rem;
+                    color: #333;
+                }
+                
+                .generated-content b {
+                    font-weight: bold;
+                }
+            </style>
+        {% endblock %}
+
+        <title>Social Media Post Generator</title>
+    </head>
+    <body>
+        <div class="container">
+            {% block content %}{% endblock %}
+
+            <footer class="pt-3 mt-4 text-muted border-top">
+                Social Media Post Generator using Gemini
+            </footer>
+        </div>
+
+        {% block scripts %}
+            {{ bootstrap.load_js() }}
+        {% endblock %}
+    </body>
+</html> 
