@@ -69,5 +69,45 @@ def index():
     
     return render_template("index.html", form=form)
 
+@app.route("/regenerate", methods=["POST"])
+def regenerate():
+    # Get values from form
+    topic = request.form.get('topic')
+    temperature = float(request.form.get('temperature', 1.75))
+    
+    # Load CoT config
+    cot_config = load_prompt_config()
+    
+    # Create prompt for both generations
+    cot_prompt = (cot_config["systemInstruction"]["parts"][0]["text"] + "\n" + 
+                f"write a post about {topic}")
+    
+    # Initialize model with dynamic temperature
+    model_params = {
+        "temperature": temperature,
+        "top_p": cot_config["parameters"]["topP"],
+    }
+    
+    # Create two separate model instances for independent generations
+    cot_model_1 = genai.GenerativeModel(
+        model_name=cot_config["model"],
+        generation_config=model_params
+    )
+    
+    cot_model_2 = genai.GenerativeModel(
+        model_name=cot_config["model"],
+        generation_config=model_params
+    )
+    
+    # Generate content from both model instances independently
+    response_1 = cot_model_1.generate_content(cot_prompt)
+    response_2 = cot_model_2.generate_content(cot_prompt)
+    
+    return render_template("post.html",
+                         user_topic=topic,
+                         temperature=temperature,
+                         cot_post=response_1.text,
+                         zeroshot_post=response_2.text)
+
 if __name__ == "__main__":
     app.run(debug=True)
